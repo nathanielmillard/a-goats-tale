@@ -1,0 +1,3 @@
+export const mainStories = [
+"There once was a goat named _. They were in a small goat village called _ that could be found far far away, past _ fields of _, over the _ mountains, and through a _ forest of _.  One day, they woke up to snow in the air, their breath weaving clouds in the air, and new that winter had finally arrived. They woke up their _ siblings, and got ready for the day with warm bowls of porridge and cider. Tossing on a scarf and hat _ bounded out into the snowy wonderderland created the night before. First off they went to check on the old neighbor _ to make sure they had fire wood and needed food to make it through the coming cold days."
+]
