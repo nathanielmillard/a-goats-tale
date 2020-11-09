@@ -1,3 +1,4 @@
+import './StoryPage.scss'
 import {mainStories} from '../../exports/storyArrays.js'
  const StoryPage = (props) => {
    let brokenUpStory = mainStories[0].split('*')
@@ -13,8 +14,8 @@ import {mainStories} from '../../exports/storyArrays.js'
      return finalStory
    }, '')
    let sections = finalStory.split('(')
-   sections = sections.map(section => {
-     return <p>{section}</p>
+   sections = sections.map((section, index) => {
+     return <p key={index}>{section}</p>
    })
    return (
     <section className='StoryPage'>{sections}</section>
