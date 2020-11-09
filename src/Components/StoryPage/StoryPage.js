@@ -22,7 +22,7 @@ import {mainStories} from '../../exports/storyArrays.js'
       {sections}
       <h2> The End! </h2>
       <section className='Button Pannel'>
-        <button> Save This Story </button>
+        <button onClick={props.saveStory}> Save This Story </button>
         <button> See Saved Stories </button>
       </section>
     </section>
