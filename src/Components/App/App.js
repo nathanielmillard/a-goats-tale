@@ -19,7 +19,7 @@ class App extends Component {
   render () {
     return (
       <BrowserRouter>
-      <section className='.App'>
+      <section className='App'>
       <Switch>
       <Route path='/goatGreeting' render={()=>{return <StoryForm saveInputs={this.saveInputs}/>}}/>
       <Route path='/story' render={()=>{return <StoryPage name={this.state.name} words={this.state.words}/>}}/>
