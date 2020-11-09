@@ -18,7 +18,14 @@ import {mainStories} from '../../exports/storyArrays.js'
      return <p key={index}>{section}</p>
    })
    return (
-    <section className='StoryPage'>{sections}</section>
+    <section className='StoryPage'>
+      {sections}
+      <h2> The End! </h2>
+      <section className='Button Pannel'>
+        <button> Save This Story </button>
+        <button> See Saved Stories </button>
+      </section>
+    </section>
    )
  }
 
