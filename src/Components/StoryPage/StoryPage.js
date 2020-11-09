@@ -41,6 +41,7 @@ class StoryPage extends Component {
       })
     this.setState({storyTiles: tiles})
   }
+
   render() {
    return (
      <section className='StoryPage'>

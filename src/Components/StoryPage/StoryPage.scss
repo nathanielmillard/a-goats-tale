@@ -16,4 +16,13 @@
     padding: .5vh;
     margin-top: 10vh;
   }
+  button:focus {
+    outline: none;
+    background-color: $nuetralMed;
+  }
+  .storyTiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
