@@ -9,12 +9,17 @@ class App extends Component {
     super(props)
     this.state = {
     name: '',
-    words: []
+    words: [],
+    savedStories: []
     }
-
   }
-  saveInputs = (name, words) => {
-    this.setState({name: name, words: words})
+  saveStory = () => {
+    let storyData = this.state.savedStories
+    storyData.push([this.state.image, this.state.name, this.state.words])
+    this.setState({savedStories: storyData})
+  }
+  saveInputs = (name, words, image) => {
+    this.setState({name: name, words: words, image: image})
   }
   render () {
     return (
@@ -22,7 +27,12 @@ class App extends Component {
       <section className='App'>
       <Switch>
       <Route path='/goatGreeting' render={()=>{return <StoryForm saveInputs={this.saveInputs}/>}}/>
-      <Route path='/story' render={()=>{return <StoryPage name={this.state.name} words={this.state.words}/>}}/>
+      <Route path='/story' render={()=>{return(
+        <StoryPage
+        name={this.state.name}
+        words={this.state.words}
+        saveStory={this.saveStory}
+        />)}}/>
       <Route path='/' render={()=>{return <WelcomePage />}}/>
       </Switch>
       </section>
