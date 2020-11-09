@@ -2,11 +2,12 @@ import './StoryPage.scss'
 import {mainStories} from '../../exports/storyArrays.js'
 import StoryTile from '../StoryTile/StoryTile.js'
 import {Component} from 'react'
+import {Link} from 'react-router-dom'
 class StoryPage extends Component {
   constructor(props) {
     super(props)
     this.state= {
-
+      storyTiles: [],
     }
   }
   createStory () {
@@ -27,23 +28,31 @@ class StoryPage extends Component {
       return <p key={index}>{section}</p>
     })
   }
-  createStoryCards() {
-    let storyCards = []
-    let populateCards = () => {
-
-    }
+  populateTiles = () => {
+    let tiles = this.props.savedStories.map((story, index) => {
+        return (<StoryTile
+          key={index}
+          id={index}
+          img={story[0]}
+          name={story[1]}
+          words={story[2]}
+          updateStory={this.props.updateStory}
+        />)
+      })
+    this.setState({storyTiles: tiles})
   }
- render() {
+  render() {
    return (
      <section className='StoryPage'>
      {this.createStory()}
      <h2> The End! </h2>
      <section className='Button Pannel'>
      <button onClick={this.props.saveStory}> Save This Story </button>
-     <button onClick={this.popularStoryCards}> See Saved Stories </button>
+     <Link to='/StoryForm'><button>Write a new story</button></Link>
+     <button onClick={this.populateTiles}> See Saved Stories </button>
      </section>
      <section className='storyTiles'>
-     {this.createStoryTiles}
+     {this.state.storyTiles}
      </section>
      </section>
    )
