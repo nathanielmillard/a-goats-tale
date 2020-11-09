@@ -1,19 +1,23 @@
 import {mainStories} from '../../exports/storyArrays.js'
  const StoryPage = (props) => {
-
    let brokenUpStory = mainStories[0].split('*')
    let namedStory = brokenUpStory.join(` ${props.name} `)
-   // let namedStory = brokenUpStory.reduce((finalStory, currentSentence, index) => {
-   //   if (testArray[index]) {
-   //     finalStory = finalStory + currentSentence + testArray[index]
-   //   }
-   //   else {
-   //     finalStory = finalStory + currentSentence
-   //   }
-   //   return finalStory
-   // }, '')
+   brokenUpStory = namedStory.split('_')
+   let finalStory = brokenUpStory.reduce((finalStory, currentSentence, index) => {
+     if (props.words[index]) {
+       finalStory = finalStory + currentSentence + props.words[index]
+     }
+     else {
+       finalStory = finalStory + currentSentence
+     }
+     return finalStory
+   }, '')
+   let sections = finalStory.split('(')
+   sections = sections.map(section => {
+     return <p>{section}</p>
+   })
    return (
-    <p>{namedStory}</p>
+    <section className='StoryPage'>{sections}</section>
    )
  }
 
