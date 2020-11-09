@@ -22,7 +22,6 @@ export const getThatGoat = () => {
     "Target-URL": "https://placegoat.com/200"
   }
 })
-  .then(response => response.json())
-  .then(response => console.log(response))
+  .then(response => response)
   .catch(error => console.error(error))
 }
