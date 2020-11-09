@@ -1,0 +1,10 @@
+@import '../../styling/variables.scss';
+
+.StoryPage {
+  font-family: $handWritten;
+  font-size: 3rem;
+  // margin: 10vh;
+  padding: 10vh;
+  color: $light;
+  background-color: $deep
+}
