@@ -15,3 +15,14 @@ export const getThatFox = () => {
     return 'Something went wrong getting your goat!'
   })
 }
+
+export const getThatGoat = () => {
+  return fetch('https://fe-cors-proxy.herokuapp.com', {
+  headers: {
+    "Target-URL": "https://placegoat.com/200"
+  }
+})
+  .then(response => response.json())
+  .then(response => console.log(response))
+  .catch(error => console.error(error))
+}

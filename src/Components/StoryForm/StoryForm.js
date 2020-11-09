@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {getThatFox} from '../../exports/apiCalls.js'
+import {getThatFox, getThatGoat} from '../../exports/apiCalls.js'
 import './StoryForm.scss'
 class StoryForm extends Component {
   constructor(props){
@@ -23,6 +23,7 @@ class StoryForm extends Component {
     this.setState({name: e.target.value})
   }
   async componentDidMount(){
+    // getThatGoat()
     let imageUrl = await getThatFox()
     this.setState({image: imageUrl})
   }
