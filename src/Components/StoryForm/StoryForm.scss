@@ -1,20 +1,53 @@
-form {
+@import '../../styling/variables.scss';
+
+.StoryForm{
   display: flex;
   flex-direction: row;
   align-items: center;
   height: 100vh;
-}
+  background-color: $nuetralMed;
+  font-size: 2rem;
+  color: $deep;
+  .goatBio {
+    width: 40vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+      margin: 2vh;
+      border-radius: 25%;
+      border: 10px double $lightest;
+    }
+    button {
+      background-color: $satMed;
+      color: $deep;
+      font-size: 2rem;
+      border: 7px outset $satMed;
+      border-radius: .5rem;
+      margin: 1vh;
+      padding: .5vh;
+      margin-top: 10vh;
+    }
+  }
+  .wordChoice {
+    width: 50vw;
+    margin: 5vw;
+    display: grid;
+    text-align: center;
 
-.goatBio {
-  width: 40vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.wordChoice {
-  width: 60vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  }
+  input {
+    color: $medDeep;
+    height: 2.01rem;
+    font-size: 1.7rem;
+    width: 10rem;
+    margin: .5rem;
+    padding: .03rem;
+    background-color: $lightest;
+    border-radius: 1rem;
+  }
+  input:focus {
+    outline: none;
+    background-color: $light
+  }
 }
