@@ -17,13 +17,13 @@ class StoryForm extends Component {
     allWords[id] = e.target.value
   }
   saveInfo = () => {
-    this.props.saveInputs(this.state.name, this.state.words)
+    this.props.saveInputs(this.state.name, this.state.words, this.state.image)
   }
   updateName = (e) => {
     this.setState({name: e.target.value})
   }
   async componentDidMount(){
-    // getThatGoat()
+    // let goatPic = await getThatGoat()
     let imageUrl = await getThatFox()
     this.setState({image: imageUrl})
   }
