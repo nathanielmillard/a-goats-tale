@@ -9,9 +9,13 @@ class StoryForm extends Component {
       name: '',
       words: [],
       image: '',
+      incomplete: true,
     }
   }
   updateWords = (e) => {
+    if (this.state.words.length === 12 && this.state.name) {
+      this.setState({incomplete: false})
+    }
     let id = e.target.id
     let allWords = this.state.words
     allWords[id] = e.target.value
@@ -38,7 +42,7 @@ class StoryForm extends Component {
         <input type='text' onChange={this.updateName}/>
         </label>
         <Link to='/story' onClick={this.saveInfo}>
-        <button> Read Your Story </button>
+        <button disabled={this.state.incomplete}> Read Your Story </button>
         </Link>
       </section>
       <section className="wordChoice">
