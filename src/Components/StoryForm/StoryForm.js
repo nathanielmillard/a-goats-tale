@@ -24,14 +24,17 @@ class StoryForm extends Component {
   }
   render(){
     return (
-      <form>
+      <form className='StoryForm' autoComplete="off">
       <section className="goatBio">
         <h1>Here's a Goat</h1>
-        <img src='https://placegoat.com/250'/>
+        <img src='https://placegoat.com/250'alt='A random goat photo'/>
         <label>
         It needs a name:
         <input type='text' onChange={this.updateName}/>
         </label>
+        <Link to='/story' onClick={this.saveInfo}>
+        <button> Read Your Story </button>
+        </Link>
       </section>
       <section className="wordChoice">
         <label>
@@ -39,11 +42,11 @@ class StoryForm extends Component {
           <input id='0' type='text' onChange={this.updateWords}/>
         </label>
         <label>
-          A crop
+          A crop:
           <input id='1' type='text' onChange={this.updateWords}/>
         </label>
         <label>
-          Two adjectives
+          Two adjectives:
           <input id='2' type='text' onChange={this.updateWords}/>
           <input id='3' type='text' onChange={this.updateWords}/>
         </label>
@@ -56,7 +59,7 @@ class StoryForm extends Component {
           <input id='5' type='text' onChange={this.updateWords}/>
         </label>
         <label>
-          Four adjectives
+          Four adjectives:
           <input id='6' type='text' onChange={this.updateWords}/>
           <input id='7' type='text' onChange={this.updateWords}/>
           <input id='8' type='text' onChange={this.updateWords}/>
@@ -70,9 +73,6 @@ class StoryForm extends Component {
           One noun:
           <input id='11' type='text' onChange={this.updateWords}/>
         </label>
-        <Link to='/story' onClick={this.saveInfo}>
-        Read Your Story
-        </Link>
       </section>
       </form>
     )
