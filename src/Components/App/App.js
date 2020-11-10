@@ -4,6 +4,7 @@ import WelcomePage from '../WelcomePage/WelcomePage.js'
 import StoryForm from '../StoryForm/StoryForm.js'
 import StoryPage from '../StoryPage/StoryPage.js'
 import {BrowserRouter, Switch, Route} from 'react-router-dom'
+
 class App extends Component {
   constructor (props) {
     super(props)
