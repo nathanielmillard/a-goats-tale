@@ -1,4 +1,5 @@
 import './StoryTile.scss'
+import PropTypes from 'prop-types'
 const StoryTile = (props) => {
   return (
   <button className='StoryTile' id={props.id} onClick={props.updateStory}>
@@ -9,3 +10,11 @@ const StoryTile = (props) => {
 }
 
 export default StoryTile
+
+StoryTile.propTypes = {
+  name: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+  img: PropTypes.string.isRequired,
+  updateStory: PropTypes.func.isRequired
+
+}
