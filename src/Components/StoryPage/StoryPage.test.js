@@ -3,7 +3,7 @@ import {render, screen} from '@testing-Library/react'
 import {MemoryRouter} from 'react-router-dom'
 import userEvent from '@testing-Library/user-event'
 
-describe('Welcome Page', () => {
+describe('Story Page', () => {
   let mockSaveStory = jest.fn()
   let mockUpdateStory = jest.fn()
 
