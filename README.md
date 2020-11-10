@@ -1,70 +1,33 @@
-# Getting Started with Create React App
+### What is this, and who is it for?
+Are you a tired Mom, who is running out of bed time stories?
+Do you care about parts of speech but don't know or care what a goat actually looks like?
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A Goat's Tale is for you!
 
-## Available Scripts
+This interactive story building experience let's you and your little one write a "mad lib" type story based of a cute furry animal photo and words you put in. Don't like your first story? No problem! You can write another one. Like your story and want to come back to it? Great! You can save stories during your session and remember them at the bottom of the page by the cute furry friend you wrote it about, and what you named them.
 
-In the project directory, you can run:
+### What did the idea look like?
 
-### `npm start`
+First I wanted a welcome page
+<img src="./public/welcomePage.png" alt="Welcome" width="400">
+A Form To Input Story Elements
+<img src="./public/GoatForm.png" alt="The Form" width="400">  
+And last the page the final story was actually visible on, that would let a user navigate to old stories.
+<img src="./public/storyview.png" alt="The Story" width="400">
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### How to see it in action?
+- Clone Down This Repo
+- Run NPM Install
+- Run NPM Start
+- Enjoy writing stories in your browser
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Background:
+This was a project for Turing School of Software and Design's third mod final solo project. The goal was to demonstrate my ability to create a simple from scratch React App, that brings in data from an API, solves a problem for a specific user, and lets that user manipulate that data some how (favoriting).
 
-### `npm test`
+I wanted to take a less serious approach and find a way to use a fun, seemingly functionless API, for a genuinely important user. Where the dissonance in goat verbiage and fox imagery comes in was a very last minute realization that the API I had build the project around didn't function how I had expected or hoped on a local scale, despite the tests I had run using external resources earlier.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Where to next?
+It is pretty easy to see the immediate need for either a rebrand and change of the animal in focus, or to fix the issues with the goat based API I had initially intended.
+From there I would love to work to build more dynamic logic behind the story strings, so that a user could work off of an array of different stories and not just one. I enjoyed using the '(' and '*' as place holders for how I wanted the full story string to be manipulated, and I would love to work out logic where other symbols can dictate the part of speech needed in that place holder, then be able to have the necessary parts of speech dynamically render the inputs on the story form.
+I think also the option for different animals immediately shows itself as room for a much more customized experience.
+I would also in a stretch goal like to work to have a better story interface that looks more like a book, and could even animate as a reader's pace so that it feels more alive and engaging that a standard book, since we do already have the advantages of tech on our side.

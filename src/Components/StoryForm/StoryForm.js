@@ -1,6 +1,6 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
-import {getThatFox, getThatGoat} from '../../exports/apiCalls.js'
+import {getThatFox} from '../../exports/apiCalls.js'
 import './StoryForm.scss'
 import PropTypes from 'prop-types'
 
@@ -37,7 +37,7 @@ class StoryForm extends Component {
       <form className='StoryForm' autoComplete="off">
       <section className="goatBio">
         <h1>Here's a Goat</h1>
-        {!this.state.image ? <h2>Loading...</h2> : <img src={this.state.image} alt='A random goat photo'/>}
+        {!this.state.image ? <h2>Loading...</h2> : <img src={this.state.image} alt='A random goat'/>}
         <label>
         They need a name:
         <input type='text' onChange={this.updateName}/>
