@@ -16,5 +16,4 @@ StoryTile.propTypes = {
   id: PropTypes.number.isRequired,
   img: PropTypes.string.isRequired,
   updateStory: PropTypes.func.isRequired
-
 }

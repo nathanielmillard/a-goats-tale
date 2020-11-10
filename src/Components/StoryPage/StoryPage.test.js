@@ -6,7 +6,6 @@ import userEvent from '@testing-Library/user-event'
 describe('Story Page', () => {
   let mockSaveStory = jest.fn()
   let mockUpdateStory = jest.fn()
-
   beforeEach(()=>{
     render (
       <MemoryRouter>
