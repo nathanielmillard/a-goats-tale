@@ -1,5 +1,7 @@
 import './WelcomePage.scss'
 import {Link} from "react-router-dom"
+import PropTypes from 'prop-types'
+
 const WelcomePage = (props ) => {
   return(
     <section className='WelcomePage'>
@@ -13,3 +15,7 @@ const WelcomePage = (props ) => {
 }
 
 export default WelcomePage
+
+WelcomePage.propTypes = {
+  
+}
