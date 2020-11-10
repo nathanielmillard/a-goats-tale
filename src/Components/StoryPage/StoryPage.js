@@ -1,18 +1,31 @@
+import './StoryPage.scss'
 import {mainStories} from '../../exports/storyArrays.js'
  const StoryPage = (props) => {
-   let testArray= [1,2,3,4,5,6,7,8,9,10]
-   let brokenUpStory = mainStories[0].split('_')
+   let brokenUpStory = mainStories[0].split('*')
+   let namedStory = brokenUpStory.join(` ${props.name} `)
+   brokenUpStory = namedStory.split('_')
    let finalStory = brokenUpStory.reduce((finalStory, currentSentence, index) => {
-     if (testArray[index]) {
-       finalStory = finalStory + currentSentence + testArray[index]
+     if (props.words[index]) {
+       finalStory = finalStory + currentSentence + props.words[index]
      }
      else {
        finalStory = finalStory + currentSentence
      }
      return finalStory
    }, '')
+   let sections = finalStory.split('(')
+   sections = sections.map((section, index) => {
+     return <p key={index}>{section}</p>
+   })
    return (
-    <p>{finalStory}</p>
+    <section className='StoryPage'>
+      {sections}
+      <h2> The End! </h2>
+      <section className='Button Pannel'>
+        <button> Save This Story </button>
+        <button> See Saved Stories </button>
+      </section>
+    </section>
    )
  }
 

@@ -1,0 +1,30 @@
+@import '../../styling/variables.scss';
+
+.WelcomePage {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 30vh;
+  padding-bottom: 30vh;
+  height: 100vh;
+  font-size: 2.5rem;
+  align-items: center;
+  background-color: $medDeep;
+  color: $darkest;
+  button {
+    background-color: $satMed;
+    color: $deep;
+    font-size: 2rem;
+    border: 7px outset $satMed;
+    border-radius: .5rem;
+    margin: 1vh;
+    padding: .5vh;
+  }
+  button:focus {
+    outline: none;
+    border: 7px inset $satMed;
+  }
+  p {
+    margin: 1vh;
+  }
+}

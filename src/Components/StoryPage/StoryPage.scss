@@ -1,0 +1,20 @@
+@import '../../styling/variables.scss';
+
+.StoryPage {
+  font-family: $handWritten;
+  font-size: 3rem;
+  // margin: 10vh;
+  padding: 10vh;
+  color: $light;
+  background-color: $deep;
+  button {
+    background-color: $satMed;
+    color: $deep;
+    font-size: 2rem;
+    border: 7px outset $satMed;
+    border-radius: .5rem;
+    margin: 1vh;
+    padding: .5vh;
+    margin-top: 10vh;
+  }
+}
