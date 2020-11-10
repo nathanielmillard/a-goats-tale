@@ -3,6 +3,8 @@ import {mainStories} from '../../exports/storyArrays.js'
 import StoryTile from '../StoryTile/StoryTile.js'
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
+import PropTypes from 'prop-types'
+
 class StoryPage extends Component {
   constructor(props) {
     super(props)
@@ -63,3 +65,11 @@ class StoryPage extends Component {
 }
 
 export default StoryPage
+
+StoryPage.propTypes = {
+  name: PropTypes.string,
+  words: PropTypes.array,
+  saveStory: PropTypes.func.isRequired,
+  updateStory: PropTypes.func.isRequired,
+  savedStories: PropTypes.array
+}
