@@ -29,6 +29,9 @@
       padding: .5vh;
       margin-top: 10vh;
     }
+    button:disabled {
+      opacity: 50%;
+    }
   }
   .wordChoice {
     width: 50vw;

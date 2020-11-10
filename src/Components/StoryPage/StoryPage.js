@@ -45,16 +45,18 @@ class StoryPage extends Component {
   render() {
    return (
      <section className='StoryPage'>
-     {this.createStory()}
-     <h2> The End! </h2>
-     <section className='Button Pannel'>
-     <button onClick={this.props.saveStory}> Save This Story </button>
-     <Link to='/StoryForm'><button>Write a new story</button></Link>
-     <button onClick={this.populateTiles}> See Saved Stories </button>
-     </section>
-     <section className='storyTiles'>
-     {this.state.storyTiles}
-     </section>
+       {this.createStory()}
+       <h2> The End! </h2>
+       <footer>
+         <section className='buttonPanel'>
+           <button onClick={this.props.saveStory}> Save This Story </button>
+           <Link to='/StoryForm'><button>Write a new story</button></Link>
+           <button onClick={this.populateTiles}> See Saved Stories </button>
+         </section>
+         <section className='storyTiles'>
+           {this.state.storyTiles}
+         </section>
+        </footer>
      </section>
    )
  }
