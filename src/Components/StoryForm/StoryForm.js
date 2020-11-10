@@ -2,6 +2,8 @@ import {Component} from 'react'
 import {Link} from 'react-router-dom'
 import {getThatFox, getThatGoat} from '../../exports/apiCalls.js'
 import './StoryForm.scss'
+import PropTypes from 'prop-types'
+
 class StoryForm extends Component {
   constructor(props){
     super(props)
@@ -27,7 +29,6 @@ class StoryForm extends Component {
     this.setState({name: e.target.value})
   }
   async componentDidMount(){
-    // let goatPic = await getThatGoat()
     let imageUrl = await getThatFox()
     this.setState({image: imageUrl})
   }
@@ -36,9 +37,9 @@ class StoryForm extends Component {
       <form className='StoryForm' autoComplete="off">
       <section className="goatBio">
         <h1>Here's a Goat</h1>
-        <img src={this.state.image} alt='A random goat photo'/>
+        {!this.state.image ? <h2>Loading...</h2> : <img src={this.state.image} alt='A random goat photo'/>}
         <label>
-        It needs a name:
+        They need a name:
         <input type='text' onChange={this.updateName}/>
         </label>
         <Link to='/story' onClick={this.saveInfo}>
@@ -89,3 +90,7 @@ class StoryForm extends Component {
 }
 
 export default StoryForm
+
+StoryForm.propTypes = {
+  saveInputs: PropTypes.func.isRequired
+}
