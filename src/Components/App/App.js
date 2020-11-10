@@ -15,8 +15,13 @@ class App extends Component {
   }
   saveStory = () => {
     let storyData = this.state.savedStories
-    storyData.push([this.state.image, this.state.name, this.state.words])
-    this.setState({savedStories: storyData})
+    let isPresent = storyData.find(story => {
+      return story[0] === this.state.image && story[1] === this.state.name
+    })
+    if (!isPresent) {
+      storyData.push([this.state.image, this.state.name, this.state.words])
+      this.setState({savedStories: storyData})
+    }
   }
   saveInputs = (name, words, image) => {
     this.setState({name: name, words: words, image: image})
