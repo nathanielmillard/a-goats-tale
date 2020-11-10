@@ -9,20 +9,39 @@ class App extends Component {
     super(props)
     this.state = {
     name: '',
-    words: []
+    words: [],
+    savedStories: []
     }
-
   }
-  saveInputs = (name, words) => {
+  saveStory = () => {
+    let storyData = this.state.savedStories
+    storyData.push([this.state.image, this.state.name, this.state.words])
+    this.setState({savedStories: storyData})
+  }
+  saveInputs = (name, words, image) => {
+    this.setState({name: name, words: words, image: image})
+  }
+  updateStory = (e) => {
+    let id = e.target.id
+    let name = this.state.savedStories[id][1]
+    let words = this.state.savedStories[id][2]
     this.setState({name: name, words: words})
+    alert('Your Story Updated, Scroll Up to See')
   }
   render () {
     return (
       <BrowserRouter>
       <section className='App'>
       <Switch>
-      <Route path='/goatGreeting' render={()=>{return <StoryForm saveInputs={this.saveInputs}/>}}/>
-      <Route path='/story' render={()=>{return <StoryPage name={this.state.name} words={this.state.words}/>}}/>
+      <Route path='/storyForm' render={()=>{return <StoryForm saveInputs={this.saveInputs}/>}}/>
+      <Route path='/story' render={()=>{return(
+        <StoryPage
+        name={this.state.name}
+        words={this.state.words}
+        saveStory={this.saveStory}
+        updateStory={this.updateStory}
+        savedStories={this.state.savedStories}
+        />)}}/>
       <Route path='/' render={()=>{return <WelcomePage />}}/>
       </Switch>
       </section>

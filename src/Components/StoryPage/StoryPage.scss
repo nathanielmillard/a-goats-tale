@@ -3,7 +3,6 @@
 .StoryPage {
   font-family: $handWritten;
   font-size: 3rem;
-  // margin: 10vh;
   padding: 10vh;
   color: $light;
   background-color: $deep;
@@ -16,5 +15,14 @@
     margin: 1vh;
     padding: .5vh;
     margin-top: 10vh;
+  }
+  button:focus {
+    outline: none;
+    background-color: $nuetralMed;
+  }
+  .storyTiles {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }

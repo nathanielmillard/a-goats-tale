@@ -1,32 +1,63 @@
 import './StoryPage.scss'
 import {mainStories} from '../../exports/storyArrays.js'
- const StoryPage = (props) => {
-   let brokenUpStory = mainStories[0].split('*')
-   let namedStory = brokenUpStory.join(` ${props.name} `)
-   brokenUpStory = namedStory.split('_')
-   let finalStory = brokenUpStory.reduce((finalStory, currentSentence, index) => {
-     if (props.words[index]) {
-       finalStory = finalStory + currentSentence + props.words[index]
-     }
-     else {
-       finalStory = finalStory + currentSentence
-     }
-     return finalStory
-   }, '')
-   let sections = finalStory.split('(')
-   sections = sections.map((section, index) => {
-     return <p key={index}>{section}</p>
-   })
+import StoryTile from '../StoryTile/StoryTile.js'
+import {Component} from 'react'
+import {Link} from 'react-router-dom'
+class StoryPage extends Component {
+  constructor(props) {
+    super(props)
+    this.state= {
+      storyTiles: [],
+    }
+  }
+  createStory () {
+    let brokenUpStory = mainStories[0].split('*')
+    let namedStory = brokenUpStory.join(` ${this.props.name} `)
+    brokenUpStory = namedStory.split('_')
+    let finalStory = brokenUpStory.reduce((finalStory, currentSentence, index) => {
+      if (this.props.words[index]) {
+        finalStory = finalStory + currentSentence + this.props.words[index]
+      }
+      else {
+        finalStory = finalStory + currentSentence
+      }
+      return finalStory
+    }, '')
+    let sections = finalStory.split('(')
+    return sections.map((section, index) => {
+      return <p key={index}>{section}</p>
+    })
+  }
+  populateTiles = () => {
+    let tiles = this.props.savedStories.map((story, index) => {
+        return (<StoryTile
+          key={index}
+          id={index}
+          img={story[0]}
+          name={story[1]}
+          words={story[2]}
+          updateStory={this.props.updateStory}
+        />)
+      })
+    this.setState({storyTiles: tiles})
+  }
+
+  render() {
    return (
-    <section className='StoryPage'>
-      {sections}
-      <h2> The End! </h2>
-      <section className='Button Pannel'>
-        <button> Save This Story </button>
-        <button> See Saved Stories </button>
-      </section>
-    </section>
+     <section className='StoryPage'>
+     {this.createStory()}
+     <h2> The End! </h2>
+     <section className='Button Pannel'>
+     <button onClick={this.props.saveStory}> Save This Story </button>
+     <Link to='/StoryForm'><button>Write a new story</button></Link>
+     <button onClick={this.populateTiles}> See Saved Stories </button>
+     </section>
+     <section className='storyTiles'>
+     {this.state.storyTiles}
+     </section>
+     </section>
    )
  }
+}
 
 export default StoryPage

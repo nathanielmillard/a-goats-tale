@@ -1,5 +1,6 @@
 import {Component} from 'react'
 import {Link} from 'react-router-dom'
+import {getThatFox, getThatGoat} from '../../exports/apiCalls.js'
 import './StoryForm.scss'
 class StoryForm extends Component {
   constructor(props){
@@ -7,27 +8,31 @@ class StoryForm extends Component {
     this.state = {
       name: '',
       words: [],
+      image: '',
     }
   }
   updateWords = (e) => {
     let id = e.target.id
     let allWords = this.state.words
     allWords[id] = e.target.value
-    // console.log(allWords)
-    // this.setState({words: e.target.value})
   }
   saveInfo = () => {
-    this.props.saveInputs(this.state.name, this.state.words)
+    this.props.saveInputs(this.state.name, this.state.words, this.state.image)
   }
   updateName = (e) => {
     this.setState({name: e.target.value})
+  }
+  async componentDidMount(){
+    // let goatPic = await getThatGoat()
+    let imageUrl = await getThatFox()
+    this.setState({image: imageUrl})
   }
   render(){
     return (
       <form className='StoryForm' autoComplete="off">
       <section className="goatBio">
         <h1>Here's a Goat</h1>
-        <img src='https://placegoat.com/250'alt='A random goat photo'/>
+        <img src={this.state.image} alt='A random goat photo'/>
         <label>
         It needs a name:
         <input type='text' onChange={this.updateName}/>
