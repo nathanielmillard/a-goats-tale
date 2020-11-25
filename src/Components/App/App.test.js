@@ -18,17 +18,17 @@ describe('App', () => {
     )
   });
   it('Should show welcome page on load', () => {
-    let greeting = screen.getByText("Welcome to a Goat's Tale")
+    let greeting = screen.getByText("Welcome to a Fox's Tale")
     let description = screen.getByText("A story building experience for you and your sleepy kid")
-    let button = screen.getByText("Meet The Goat")
+    let button = screen.getByText("Meet The Fox")
     expect(greeting).toBeInTheDocument()
     expect(description).toBeInTheDocument()
     expect(button).toBeInTheDocument()
   });
   it('Should story form after user clicks Link', () => {
-    let button = screen.getByText("Meet The Goat")
+    let button = screen.getByText("Meet The Fox")
     userEvent.click(button)
-    let title = screen.getByText("Here's a Goat")
+    let title = screen.getByText("Here's a Fox")
     let submitButton = screen.getByText("Read Your Story")
     expect(title).toBeInTheDocument()
     expect(submitButton).toBeInTheDocument()
@@ -41,13 +41,13 @@ describe('App', () => {
     userEvent.type(aName, 'Brad')
     userEvent.type(aNoun, 'shoe')
     userEvent.click(submitButton)
-    let firstLine = screen.getByText("There once was a goat named Brad .")
+    let firstLine = screen.getByText("There once was a fox named Brad .")
     expect(firstLine).toBeInTheDocument
   });
   it('Should be able to make another story', () => {
     let newStoryButton = screen.getByText('Write a new story')
     userEvent.click(newStoryButton)
-    let title = screen.getByText("Here's a Goat")
+    let title = screen.getByText("Here's a Fox")
     let submitButton = screen.getByText("Read Your Story")
     expect(title).toBeInTheDocument()
     expect(submitButton).toBeInTheDocument()

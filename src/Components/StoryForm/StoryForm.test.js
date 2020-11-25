@@ -15,7 +15,7 @@ describe('Story Form', () => {
          />
       </MemoryRouter>
     )
-    let title = screen.getByText("Here's a Goat")
+    let title = screen.getByText("Here's a Fox")
     let submitButton = screen.getByText("Read Your Story")
     let aTown = screen.getByLabelText("A name for a town:")
     let aCrop = screen.getByLabelText("A crop:")
@@ -59,9 +59,9 @@ describe('Story Form', () => {
       </MemoryRouter>
     )
     let image = await waitFor(()=>{
-      screen.getByAltText('A random goat')
+      screen.getByAltText('A random fox')
     })
-    expect(screen.getByAltText('A random goat')).toBeInTheDocument()
+    expect(screen.getByAltText('A random fox')).toBeInTheDocument()
   });
   it('Should save inputs', async () => {
     getThatFox.mockResolvedValue('https://randomfox.ca/images/32.jpg')
@@ -74,7 +74,7 @@ describe('Story Form', () => {
       </MemoryRouter>
     )
     let image = await waitFor(()=>{
-      screen.getByAltText('A random goat')
+      screen.getByAltText('A random fox')
     })
     let submitButton = screen.getByText("Read Your Story")
     let aName = screen.getByLabelText("They need a name:")

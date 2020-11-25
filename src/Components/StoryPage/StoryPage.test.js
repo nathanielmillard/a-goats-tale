@@ -20,8 +20,8 @@ describe('Story Page', () => {
     )
   });
   it('Should show a dynamic story', () => {
-    let firstLine = screen.getByText("There once was a goat named Brad .")
-    let secondLine = screen.getByText("They were in a small goat village called One that could be found far far away, over fields of Two, over the Three mountains, and through a Four forest.")
+    let firstLine = screen.getByText("There once was a fox named Brad .")
+    let secondLine = screen.getByText("They were in a small fox village called One that could be found far far away, over fields of Two, over the Three mountains, and through a Four forest.")
     expect(firstLine).toBeInTheDocument
     expect(secondLine).toBeInTheDocument
   });

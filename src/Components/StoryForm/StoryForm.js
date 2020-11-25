@@ -35,9 +35,9 @@ class StoryForm extends Component {
   render(){
     return (
       <form className='StoryForm' autoComplete="off">
-      <section className="goatBio">
-        <h1>Here's a Goat</h1>
-        {!this.state.image ? <h2>Loading...</h2> : <img src={this.state.image} alt='A random goat'/>}
+      <section className="foxBio">
+        <h1>Here's a Fox</h1>
+        {!this.state.image ? <h2>Loading...</h2> : <img src={this.state.image} alt='A random fox'/>}
         <label>
         They need a name:
         <input type='text' onChange={this.updateName}/>

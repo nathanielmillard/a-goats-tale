@@ -16,13 +16,13 @@ describe('Story Tile', () => {
   });
   it('Should render the name and image passed in', () => {
     let name = screen.getByText("Brad's story")
-    let image = screen.getByAltText("A goat named Brad")
+    let image = screen.getByAltText("A fox named Brad")
     expect(name).toBeInTheDocument()
     expect(image).toBeInTheDocument()
   });
   it('Should fire a function when clicked', () => {
     let name = screen.getByText("Brad's story")
-    let image = screen.getByAltText("A goat named Brad")
+    let image = screen.getByAltText("A fox named Brad")
     userEvent.click(name)
     expect(mockedFunction).toHaveBeenCalledTimes(1)
   });

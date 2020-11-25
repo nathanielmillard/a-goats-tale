@@ -11,9 +11,9 @@ describe('Welcome Page', () => {
     )
   });
   it('Should render a greeting', () => {
-    let greeting = screen.getByText("Welcome to a Goat's Tale")
+    let greeting = screen.getByText("Welcome to a Fox's Tale")
     let description = screen.getByText("A story building experience for you and your sleepy kid")
-    let button = screen.getByText("Meet The Goat")
+    let button = screen.getByText("Meet The Fox")
     expect(greeting).toBeInTheDocument()
     expect(description).toBeInTheDocument()
     expect(button).toBeInTheDocument()
