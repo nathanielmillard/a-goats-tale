@@ -1,5 +1,5 @@
 import WelcomePage from './WelcomePage.js'
-import {render, screen} from '@testing-Library/react'
+import {render, screen} from '@testing-library/react'
 import {MemoryRouter} from 'react-router-dom'
 
 describe('Welcome Page', () => {

@@ -1,7 +1,7 @@
 import StoryPage from './StoryPage.js'
-import {render, screen} from '@testing-Library/react'
+import {render, screen} from '@testing-library/react'
 import {MemoryRouter} from 'react-router-dom'
-import userEvent from '@testing-Library/user-event'
+import userEvent from '@testing-library/user-event'
 
 describe('Story Page', () => {
   let mockSaveStory = jest.fn()

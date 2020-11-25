@@ -1,6 +1,6 @@
 import StoryTile from './StoryTile.js'
-import {render, screen} from '@testing-Library/react'
-import userEvent from '@testing-Library/user-event'
+import {render, screen} from '@testing-library/react'
+import userEvent from '@testing-library/user-event'
 
 describe('Story Tile', () => {
   let mockedFunction = jest.fn()

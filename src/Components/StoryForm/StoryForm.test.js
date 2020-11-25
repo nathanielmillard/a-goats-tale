@@ -1,7 +1,7 @@
 import StoryForm from './StoryForm.js'
-import {render, screen, waitFor} from '@testing-Library/react'
+import {render, screen, waitFor} from '@testing-library/react'
 import {MemoryRouter} from 'react-router-dom'
-import userEvent from '@testing-Library/user-event'
+import userEvent from '@testing-library/user-event'
 import {getThatFox} from '../../exports/apiCalls.js'
 jest.mock('../../exports/apiCalls.js')
 
